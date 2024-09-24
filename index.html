@@ -1,386 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>Mis Dulces Quince</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <head>
+        <meta charset="utf-8">
+        <title>Mr&Mrs - Wedding Bootstrap Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+        <!-- Google Web Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet"> 
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="font-secondary text-white mb-n2">Mis Dulces <span class="text-primary">&</span>Quince</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-            <div class="navbar-nav ml-auto py-0">
-                <a href="#home" class="nav-item nav-link active" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Home</a>
-                <a href="#about" class="nav-item nav-link" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Invitacion</a>
-                <a href="#story" class="nav-item nav-link" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Mis Eventos</a>
-                <a href="#gallery" class="nav-item nav-link"style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Book</a>
-            </div>
-            <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                <h1 class="font-secondary text-white mb-n2">Mis Dulces <span class="text-primary">&</span> Quince</h1>
-            </a>
-            <div class="navbar-nav mr-auto py-0">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        
             
-                
-                <a href="#rsvp" class="nav-item nav-link" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Confirma</a>
+        <style>
+            /* Estilos para el fondo del pop-up */
+            #popup {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            /* Estilos para el contenido del pop-up */
+            #popupContent {
+                background-color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+            }
+    
+            #playButton {
+                display: inline-block;
+                background-color: #007BFF;
+                color: white;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            #playButton:hover {
+                background-color: #0056b3;
+            }
+    
+            #playButton i {
+                margin-right: 8px;
+            }
+
+            #weddingAbout{
+                background-color: rgb(224, 187, 231);
+
+            }
+            #1{
+
+                font-weight: bold;
+            }
+        </style>
+        <style>
+       
+            /* Fondo con imagen de pareja bailando */
+            .background-image {
+                background-image: url('./img/dance-689609.jpg'); /* Asegúrate de tener la imagen en esta ubicación */
+                background-size: cover;
+                background-position: center;
+                opacity: 0.2; /* Ajusta la opacidad para que el fondo no distraiga del texto */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                border-radius: 10px;
+            }
+            
+            /* Estilo para la caja de cuenta regresiva */
+            .wedding-date {
+                background-color: rgba(150, 120, 180, 0.8); /* Color suave violeta con algo de transparencia */
+                border-radius: 15px;
+            }
+            
+            /* Estilo para los números de la cuenta regresiva */
+            .counter-number {
+                font-family: 'Great Vibes', cursive; /* Una fuente estilizada y elegante */
+                font-size: 3rem;
+                color: #0a010f; /* Color claro para contraste */
+                background-color: rgba(100, 80, 150, 0.6); /* Fondo para destacar los números */
+                padding: 10px 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+            }
+            
+            /* Estilo para los textos de días, horas, etc. */
+            .wedding-date span {
+                color: #060112;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+            
+            /* Estilo para el botón */
+            .wedding-date .btn {
+                background-color: #7E57C2; /* Botón en tono violeta oscuro */
+                border-color: #4A148C;
+                transition: background-color 0.3s ease;
+            }
+            
+            .wedding-date .btn:hover {
+                background-color: #5E35B1; /* Botón cambia de tono al pasar el cursor */
+            }
+            </style>
+            
+    </head>
+
+    <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
+           <!-- Pop-up con botón Dale Play -->
+    <div id="popup">
+        <div id="popupContent">
+            <h2>¡Ingresa con música!</h2>
+            <div id="playButton">
+                <i class="fas fa-music"></i> Dale Play
             </div>
         </div>
-    </nav>
-    <!-- Navbar End -->
+    </div>
+
+    <!-- Control de audio oculto -->
+    <audio id="myAudio">
+        <source src="./img/Chayanne - Tiempo De Vals Letra.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script>
+        // Mostrar el pop-up al cargar la página
+        window.onload = function() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "flex";
+        };
+
+        // Seleccionar el botón y el elemento de audio
+        var playButton = document.getElementById("playButton");
+        var audio = document.getElementById("myAudio");
+
+        // Función para reproducir la música y ocultar el pop-up
+        playButton.addEventListener("click", function() {
+            audio.play();
+            document.getElementById("popup").style.display = "none"; // Ocultar el pop-up
+        });
+    </script>
 
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5 pb-5" id="home">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="./img/teenager-775053_1280.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Morena Guadalupe</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">Invitacíon Especial</h3>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+      
+
+        <!-- Navbar start -->
+        <div class="container-fluid sticky-top px-0">
+            <div class="container-fluid">
+                <div class="container px-0">
+                    <nav class="navbar navbar-light navbar-expand-xl" id="navBar">
+                        <a href="index.html" class="navbar-brand">
+                            <h4 class="text-primary display-6 fw-bold mb-0">Morena<strong class="text-secondary">  </strong>Coria</h4>
+                        </a>
+                        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars text-primary"></span>
+                        </button>
+                        <div class="collapse navbar-collapse py-3" id="navbarCollapse">
+                            <div class="navbar-nav mx-auto border-top">
+                                <a href="#weddingHome" class="nav-item nav-link active">Home</a>
+                                
+                                <a href="#weddingStory" class="nav-item nav-link">Mis Papis</a>
+                                <a href="#weddingTimeline" class="nav-item nav-link">Linea de Tiempo</a>
+                                
+                                <a href="#weddingRsvp" class="nav-item nav-link">Confirmar</a>
                             </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="img\Untitled ‑ Made with FlexClip (1).mp4" data-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="./img/friendship-day-3104635_1280.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Quinceañera</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">Mis Dulces Quince</h3>
+                            <div class="d-flex align-items-center flex-nowrap pt-xl-0">
+                                <a href="ruta/de/tu/tarjeta.jpg" download="Tarjeta_Invitacion.jpg" class="btn btn-primary btn-primary-outline-0 py-2 px-4 ms-4">
+                                    Invitación
+                                </a>
                             </div>
-                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
-                                data-src="img\Untitled ‑ Made with FlexClip (1).mp4" data-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-prev-icon mt-3"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-next-icon mt-3"></span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Invitación</h6>
-                <h1 class="font-secondary display-4">Mi Padres</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
-                <div class="col-md-6 p-0 text-center text-md-right">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">Walter</h3>
-                        <p>Al cumplir sus 15 años deseo para mi hija todo lo mejor y que sea muy feliz. </p>
-                        
-                       
-                    </div>
-                </div>
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/father-22194_1280.jpg" style="object-fit: cover;">
-                </div>
-            </div>
-            <div class="row m-0">
-                <div class="col-md-6 p-0" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/woman-1274361_1280.jpg" style="object-fit: cover;">
-                </div>
-                <div class="col-md-6 p-0 text-center text-md-left">
-                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">Verónica</h3>
-                        <p>Será un momento mágico rodeada de toda su familia y de personas que la quieren mucho.</p>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Story Start -->
-    <div class="container-fluid py-5" id="story" style="background-color: aliceblue;">
-        <div class="container pt-5 pb-3">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Story</h6>
-                <h1 class="font-secondary display-4">Mis Eventos</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="img/church-4349521_1280.jpg" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Acción de Gracias</h4>
-                            <p class="text-uppercase mb-2">15 Marzo 2024</p>
-                            <p class="m-0">Recibire la bendicion de Dios en la Parroquia Santo cristo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Brindis en Familia</h4>
-                            <p class="text-uppercase mb-2">15 Marzo 2024</p>
-                            <p class="m-0">Rodeados de los afectos mas íntimos compartiremos una agazajo y un brindis por este hermoso acontecimiento.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="img/family-6002642_1280.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="img/story-3.jpg" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Sesión de Fotos</h4>
-                            <p class="text-uppercase mb-2">21 Marzo 2024</p>
-                            <p class="m-0">Recorreré diferentes lugares de mi ciudad para una sesion de fotografia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Mega Party</h4>
-                            <p class="text-uppercase mb-2">22 Marzo 2024</p>
-                            <p class="m-0">Acompáñame a vivir una Noche Mágica.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="img/event-2.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Story End -->
-
-
-    <!-- Gallery Start -->
-    <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 90px 0;">
-        <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
-            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Galeria</h6>
-            <h1 class="font-secondary display-4 text-white">Mi Book</h1>
-            <i class="far fa-heart text-white"></i>
-        </div>
-        <div class="owl-carousel gallery-carousel">
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
-                <a href="img/gallery-1.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
-                <a href="img/gallery-2.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
-                <a href="img/gallery-3.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
-                <a href="img/gallery-4.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="">
-                <a href="img/gallery-5.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="">
-                <a href="img/gallery-6.jpg" data-lightbox="gallery">
-                    <i class="fa fa-2x fa-plus text-white"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- Gallery End -->
-
-
-    <!-- Event Start -->
-    <div class="container-fluid py-5" id="event">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Mis Eventos</h6>
-                <h1 class="font-secondary display-4">Participa conmigo de estos momentos únicos</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">La alegria de mis quince años deseo compartirla contigo, por eso te invito especialmente para que me acompañes</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 border-right border-primary">
-                    <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.4267418859063!2d-64.2816792624112!3d-27.79663247623084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b527a9428e56f%3A0x64c041e1940c7662!2sParroquia%20Santo%20Cristo!5e0!3m2!1ses-419!2sar!4v1705014717127!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <h4 class="mb-3">Parroquia Santo Cristo</h4>
-                        <p class="mb-2">Libertad y Av.Central , B° Mosconi</p>
-                        <p class="mb-0">Viernes 15 de Marzo 2024 - 21:00PM</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center text-md-left ml-md-3">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3528.7533106777596!2d-64.23970616241003!3d-27.81736327621901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b4e74b574a93f%3A0xd45e95d4bfb7bb9e!2sSal%C3%B3n%20Zambra%20-%20Eventos%20Santiago%20del%20Estero!5e0!3m2!1ses-419!2sar!4v1705014788064!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <h4 class="mb-3">Mega Party</h4>
-                        <p class="mb-2">Salón de Eventos "Ensueños"</p>
-                        <p class="mb-0">Sábado 23 de Marzo 2024 - 22:00PM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Event End -->
-
-
-   
-
-    <!-- RSVP Start -->
-    <div class="container-fluid py-5" id="rsvp" style="background-color: rgb(219, 95, 119);">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">VIP</h6>
-                <h1 class="font-secondary display-4">Confirma Tu Presencia</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        
                             
-                            <div>
-                                <a href=" https://wa.me/+543854788966" button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Chatear</button></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+             
+
+        </div>
+        <!-- Navbar End -->
+
+
+
+        <!-- Carousel Start -->
+        <div class="container-fluid carousel-header px-0">
+            
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/3542392f-b39d-4253-bdea-84fc3938a9a4.webp" class="img-fluid" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
+                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double;">
+                                    <h1 style="font-size: xx-large;" class="display-1 text-capitalize text-white mb-3">Te invito a Celebrar mis Quince <i ></i></h1>
+                                </div>
+                                <h1 class="display-1 text-capitalize text-white mb-3">Morena Guadalupe <i class="fa fa-heart text-primary"></i> Coria</h1>
+                                
+                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Octubre 05 2024</h4>
+                                    
+                                </div>
+                                
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                  
+                  
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+        <!-- Hello! Start -->
+        <div class="container-fluid position-relative py-5" id="weddingStory">
+            <div class="position-absolute" style="top: -35px; right: 0;">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: -10px; left: 0; transform: rotate(150deg);">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="container position-relative py-5">
+                
+                <div class="mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800;">
+                    <h1 class="text-primary display-1">Hola!</h1>
+                    <h4 class="text-dark mb-0">Te invitamos a compartir con noostros este hermoso acontecimiento</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex">
+                                    <div class="text-end my-auto pe-4">
+                                        <h3 class="text-primary mb-3 fw-bold" style="font-family: 'Cinzel Decorative', serif; font-size: 4rem;">Walter</h3>
+
+
+
+                                        <p class="text-dark mb-0 fw-bold" style="line-height: 30px; font-style: italic;">Hoy es un día muy especial, un día que marca un nuevo capítulo en tu vida. No puedo evitar emocionarme al verte llegar a tus quince años, llena de alegría, sueños y esperanza. Pareciera que fue ayer cuando te sostenía en mis brazos por primera vez, y ahora te veo florecer en una joven llena de belleza, tanto por fuera como por dentro.
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-2 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-heart fa-5x text-primary"></i>
+                               </div>
+                            </div>
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex">
+                                     <div class="my-auto ps-4">
+                                        <h3 class="text-primary mb-3 fw-bold" style="font-family: 'Cinzel Decorative', serif; font-size: 4rem;">Verónica</h3>
+
+
+                                        <p class="text-dark mb-0 fw-bold" style="line-height: 30px; font-style: italic;">
+                                            Hoy celebramos un día que siempre soñé: tus quince años. Verte convertida en esta hermosa joven es un regalo inmenso para mi corazón. Recuerdo cada momento que hemos vivido juntas, desde tus primeras risas hasta los momentos más desafiantes. Has sido una luz en mi vida, y estoy increíblemente orgullosa de la persona que eres.
+                                        </p>
+                                        
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Hello! End -->
+
+
+      
+
+        <!-- Story Start -->
+        <div class="container-fluid story position-relative py-5" id="weddingTimeline">
+            <div class="position-absolute" style="top: -35px; right: 0;">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: -15px; left: 0; transform: rotate(150deg);">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="container position-relative py-5">
+                <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-uppercase text-primary fw-bold mb-4">Linea de Tiempo</h5>
+                    <h1 class="display-4">Mis Dulces 15</h1>
+                </div>
+                <div class="story-timeline">
+                    <div class="row wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-md-6 text-end border-0 border-top border-end border-secondary p-4">
+                            <div class="d-inline-flex align-items-center h-100">
+                                <img src="./img/catedral.jpg" class="img-fluid w-100 img-border" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 border-start border-top border-secondary p-4 pe-0">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h4 class="mb-2 text-dark">Misa de Acción de Gracias</h4>
+                                <p class="text-uppercase text-primary mb-2" style="letter-spacing: 3px;">05 de Octubre de 2024 - 10:00 hs</p>
+                                <p class="m-0 fs-5">En la Catedral Basilica recibiré la bendicion por mis quinces años junto a mis padres y familiares.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row flex-column-reverse flex-md-row wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="col-md-6 text-end border-end border-top border-secondary p-4 ps-0">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h4 class="text-dark mb-2">Brindis Familiar</h4>
+                                <p class="text-uppercase text-primary mb-2" style="letter-spacing: 3px;">05 de Octubre de 2024 - 13:00 hs</p>
+                                <p class="m-0 fs-5">Junto a mis abuelos Cuto y Dario brindaremos por este hermoso dia.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 border-start border-top border-secondary p-4">
+                            <div class="d-inline-flex align-items-center h-100">
+                                <img src="img/story-2.jpg" class="img-fluid w-100 img-border" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="col-md-6 text-end border-end border-top border-secondary p-4 ps-0">
+                            <div class="d-inline-flex align-items-center h-100">
+                                <img src="img/story-3.jpg" class="img-fluid w-100 img-border" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 border-start border-top border-secondary p-4 pe-0">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h4 class="text-dark mb-2">Party</h4>
+                                <p class="text-uppercase text-primary mb-2" style="letter-spacing: 3px;">05 de Octubre de 2024 - 22:00 hs </p>
+                                <p class="m-0 fs-5">Acompañame a disfrutar y celebrar en una hermosa fiesta que mi familia ha preparado para mi y todos mis amigos y afectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row flex-column-reverse flex-md-row wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-md-6 text-end border border-start-0 border-secondary p-4 ps-0">
+                            <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4">
+                                <h4 class="text-dark mb-2">Enagagement</h4>
+                                <p class="text-uppercase text-primary mb-2" style="letter-spacing: 3px;">01 Jan 2050</p>
+                                <p class="m-0 fs-5">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 border border-end-0 border-secondary p-4">
+                            <div class="d-inline-flex align-items-center h-100">
+                                <img src="img/story-4.jpg" class="img-fluid w-100 img-border" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Story End -->
+
+
+       
+                
+
+                <div class="container-fluid wedding-date-bg position-relative py-5">
+    <div class="position-absolute" style="top: -100px; right: 0;">
+        <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
     </div>
-    <!-- RSVP End -->
+    <div class="position-absolute" style="top: -80px; left: 0; transform: rotate(150deg);">
+        <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+    </div>
+    <div class="container py-5 wow zoomIn" data-wow-delay="0.1s">
+        <div class="wedding-date text-center p-5" style="border-style: double !important; border: 15px solid rgba(186, 134, 222, 0.5);">
+            <div class="wedding-date-content" style="position: relative;">
 
+                <!-- Imagen de fondo de pareja bailando el vals -->
+                <div class="background-image"></div>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5" id="contact" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="section-title position-relative text-center">
-                <h1 class="font-secondary display-3 text-white">Mis Dulces 15</h1>
-                <h2 class="font-secondary display-3 text-white">Morena Guadalupe Coria</h1>
-                <i class="far fa-heart text-white"></i>
+                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double;">                </div>
+                <h1 class="display-4" style="color: #08020c;">Mi Primer Vals</h1>
+                <p class="text-light fs-5">Niloy Hotel New York, 123 West 23th Street, NY</p>
+
+                <!-- Cuenta regresiva -->
+                <div class="d-flex align-items-center justify-content-center mb-5">
+                    <div class="text-light fs-2 me-4">
+                        <div id="days" class="counter-number">14</div>
+                        <span>Días</span>
+                    </div>
+                    <div class="text-light fs-2 me-4">
+                        <div id="hours" class="counter-number">10</div>
+                        <span>Horas</span>
+                    </div>
+                    <div class="text-light fs-2 me-4">
+                        <div id="minutes" class="counter-number">00</div>
+                        <span>Minutos</span>
+                    </div>
+                    <div class="text-light fs-2 me-0">
+                        <div id="seconds" class="counter-number">00</div>
+                        <span>Segundos</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="d-flex justify-content-center py-2">
-                <p class="text-white" href="#">walterhoraciocoria67@gmail.com</p>
-                <span class="px-3">|</span>
-                <p class="text-white" href="#">543854788966</p>
-            </div>
-            <p class="m-0">&copy; <a class="text-primary" href="#">Derechos Reservados</a>. Designed by <a class="text-primary" href="Walter Horacio Coria">WalterTek</a>
-            </p>
         </div>
     </div>
-    <!-- Footer End -->
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+        
+<!-- ubicación de los eventos -->
+ <!-- Caja con mapa de Google y detalles -->
+ <div style="background-color: #f9e8fc; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 50px auto;">
+    <!-- Título Principal -->
+    <h1 style="color: #7b2cbf; font-family: 'Great Vibes', cursive; font-size: 3rem; margin-bottom: 10px;">MegaParty</h1>
+    
+    <!-- Subtítulo: Nombre del Salón -->
+    <h2 style="color: #6a0572; font-family: 'Open Sans', sans-serif; font-size: 1.8rem; margin-bottom: 10px; text-shadow: 1px 1px 2px #e0c3fc;">
+        Salón de Fiestas <strong>"El Gran Evento"</strong>
+    </h2>
+    
+    <!-- Subtítulo: Ubicación -->
+    <h3 style="color: #9e005d; font-family: 'Open Sans', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">
+        <i class="fas fa-map-marker-alt" style="color: #7b2cbf; margin-right: 10px;"></i> Avenida Siempre Viva, 123
+    </h3>
+    
+    <!-- Caja del Mapa -->
+    <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.881494828734!2d-74.00425528459483!3d40.741351979327515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259af18ef6ef7%3A0x8e4af2f109c5c539!2sFlatiron%20Building!5e0!3m2!1sen!2sus!4v1632406868888!5m2!1sen!2sus" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/1234567890?text=¡Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20MegaParty" 
+       style="display: inline-block; margin-top: 20px; padding: 15px 30px; background-color: #25D366; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 1.2rem; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease;"
+       target="_blank">
+        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Confirma tu asistencia por WhatsApp
+    </a>
+</div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Fin de la caja con mapa de Google -->
 
 
+
+
+
+        
+        
+       
+
+
+        
+       <!-- Footer Start -->
+<footer style="background: linear-gradient(135deg, #f7e1a0, #d4af37); color: white; padding: 40px 0;">
+    <div class="container">
+        <div class="row">
+            <!-- Columna 1: Información de contacto -->
+            <div class="col-md-4 mb-4">
+                <h5 style="font-weight: bold;">Contacto</h5>
+                <p>Teléfono: <a href="tel:+543511234567" style="color: white; text-decoration: none;">+54 351 123 4567</a></p>
+            </div>
+            
+            <!-- Columna 2: Nombre de la cumpleañera -->
+            <div class="col-md-4 mb-4">
+                <h5 style="font-weight: bold;">Cumpleañera</h5>
+                <p>Morena Guadalupe Coria</p>
+            </div>
+            
+            <!-- Columna 3: Invitación a la fiesta -->
+            <div class="col-md-4 mb-4">
+                <h5 style="font-weight: bold;">Invitación a la Fiesta</h5>
+                <p>Te esperamos el 05 de Octubre de 2024 para celebrar mis quince años. ¡No faltes!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Columna 4: CBU de la cumpleañera -->
+            <div class="col-md-12 text-center">
+                <h5 style="font-weight: bold;">CBU para Regalos</h5>
+                <p>Alias: morenacoria.quince | CBU: 1234567890123456789012</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <p class="mb-0" style="color: #f8e9c7;">&copy; 2024 Morena Guadalupe Coria. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+
+
+        
+        
+
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
+    <!-- cuenta regresiva -->
+    <script>
+        // Fecha del evento: 5 de octubre de 2024 a las 22:00 horas
+        var countDownDate = new Date("Oct 05, 2024 22:00:00").getTime();
+        
+        // Actualiza la cuenta regresiva cada 1 segundo
+        var x = setInterval(function() {
+        
+            // Fecha y hora actual
+            var now = new Date().getTime();
+        
+            // Diferencia entre la fecha actual y la del evento
+            var distance = countDownDate - now;
+        
+            // Cálculos de días, horas, minutos y segundos
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+            // Mostrar los resultados en los elementos HTML correspondientes
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+        
+            // Si la cuenta regresiva ha terminado, mostrar un mensaje
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+        </script>
+        
+    </body>
 
 </html>
